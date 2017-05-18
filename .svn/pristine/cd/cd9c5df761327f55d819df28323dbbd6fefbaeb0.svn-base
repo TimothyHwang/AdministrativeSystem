@@ -1,0 +1,169 @@
+﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="MOA10001.aspx.vb" Inherits="M_Source_10_MOA10001" %>
+
+<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="cc1" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>維護主官</title>
+    <link href='<%#ResolveUrl("~/css/site.css") %>' rel="stylesheet" type="text/css" />
+    <link href='<%#ResolveUrl("~/Styles.css") %>' rel="stylesheet" type="text/css" />
+    <script src='<%#ResolveUrl("~/Script/jquery-1.10.2.min.js") %>' type="text/javascript"></script>
+    <style type="text/css">        
+        .maintable {
+            width: 100%;
+            text-align:center;
+        }
+        .tableView
+        {
+            margin-right: 0px;
+        }
+    </style>
+    <script type="text/javascript"> 
+        var id = null;
+        function movePanel() {
+            var pnl = window.$get("pnlDialog");
+            //var btn = window.$get("ibnManagerAdd");
+            if (pnl != null) {
+                pnl.style.left = "100px";
+                pnl.style.top = "50px";
+                id = setTimeout("movePanel();", 10);
+            }
+        }
+        function stopMoving() {
+             clearTimeout(id);
+         }
+            
+        function openwin() {
+            window.open('MOA10006.aspx', 'mywindow', 'fullscreen=1,toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=0,resizable=0');
+            //window.open('MOA10006.aspx', "", "fullscreen,scrollbars");
+            //window.open('MOA10006.aspx', 'mywindow',config='height=screen.height,width=screen.width,fullscreen=1,toolbar=0');
+        }    
+         
+   </script>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <table class="maintable">
+            <tr>
+                <td>
+                    <asp:ScriptManager ID="Sm" runat="server"></asp:ScriptManager>                    
+                    <asp:GridView ID="gvManager" runat="server" AllowPaging="True" 
+                        AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="P_Num" 
+                        DataSourceID="SqlDataSourceManager" EnableModelValidation="True" 
+                        CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" 
+                        Caption="主官在營燈管理" CaptionAlign="Top" CssClass="tableView">
+                        <AlternatingRowStyle BackColor="White" />
+                        <Columns>
+                            <asp:BoundField DataField="P_Num" HeaderText="序號" ReadOnly="True" 
+                                SortExpression="P_Num" Visible="False" >
+                            <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                            </asp:BoundField>
+                            <asp:BoundField DataField="Title" HeaderText="職銜" SortExpression="Title" 
+                                Visible="False" >
+                            <ItemStyle Width="16%" HorizontalAlign="Center" VerticalAlign="Middle" />
+                            </asp:BoundField>
+                            <asp:BoundField DataField="Name" HeaderText="名稱" SortExpression="Name" >
+                            <ItemStyle Width="16%" HorizontalAlign="Center" VerticalAlign="Middle" />
+                            </asp:BoundField>
+                            <asp:TemplateField HeaderText="排序" SortExpression="RankId">
+                                <EditItemTemplate>
+                                    <asp:Label ID="Label1" runat="server" Text='<%# Bind("RankId") %>' 
+                                        ForeColor="White"></asp:Label>
+                                </EditItemTemplate>
+                                <ItemTemplate>
+                                    <asp:ImageButton ID="imbUpArrow" runat="server" 
+                                        ImageUrl="~/Image/arrowdown_w.GIF" CommandName="ChangeSort" 
+                                        CommandArgument='<%# Eval("RankId") %>' ToolTip="Down" />
+                                    <asp:ImageButton ID="ImageButton2" runat="server" 
+                                        ImageUrl="~/Image/arrowup_w.GIF" CommandArgument='<%# Eval("RankId") %>'
+                                        CommandName="ChangeSort" ToolTip="Up" />
+                                </ItemTemplate>
+                                <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="16%" />
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="狀態" SortExpression="Status">
+                                <EditItemTemplate>
+                                    <asp:DropDownList ID="ddlStatus" runat="server" 
+                                        SelectedValue='<%# Bind("Status") %>'>
+                                        <asp:ListItem Value="0">未在營</asp:ListItem>
+                                        <asp:ListItem Value="1">在營</asp:ListItem>
+                                    </asp:DropDownList>
+                                </EditItemTemplate>
+                                <ItemTemplate>
+                                    <asp:Label ID="lblStatus" runat="server" Text='<%# Bind("Status") %>'></asp:Label>
+                                </ItemTemplate>
+                                <ItemStyle Width="16%" HorizontalAlign="Center" VerticalAlign="Middle" />
+                            </asp:TemplateField>
+                            <asp:BoundField DataField="CreateDate" HeaderText="CreateDate" 
+                                SortExpression="CreateDate" Visible="False" />
+                            <asp:BoundField DataField="Creator" HeaderText="Creator" 
+                                SortExpression="Creator" Visible="False" />
+                            <asp:BoundField DataField="ModifyDate" HeaderText="ModifyDate" 
+                                SortExpression="ModifyDate" Visible="False" />
+                            <asp:BoundField DataField="Modifier" HeaderText="Modifier" 
+                                SortExpression="Modifier" Visible="False" />
+                            <asp:TemplateField ShowHeader="False">
+                                <EditItemTemplate>
+                                    <asp:ImageButton ID="ibnEditOK" runat="server" CausesValidation="True" 
+                                        CommandName="Update" ImageUrl="~/Image/apply.gif" Text="更新" />
+                                    &nbsp;<asp:ImageButton ID="ibnCancel" runat="server" CausesValidation="False" 
+                                        CommandName="Cancel" ImageUrl="~/Image/cancel.gif" Text="取消" />
+                                </EditItemTemplate>
+                                <ItemTemplate>
+                                    <asp:ImageButton ID="ibnModify" runat="server" CausesValidation="False" 
+                                        CommandName="Edit" ImageUrl="~/Image/update.gif" Text="編輯" />
+                                    &nbsp;<asp:ImageButton ID="ibnDelete" runat="server" CausesValidation="False" 
+                                        CommandName="Delete" CommandArgument='<%# Eval("P_Num") %>' ImageUrl="~/Image/delete.gif" Text="刪除" />
+                                    <cc1:ConfirmButtonExtender ID="ibnDelete_ConfirmButtonExtender" 
+                                        runat="server" ConfirmText="此動作會將管理人同時刪除，確認要刪除嗎？" Enabled="True" 
+                                        TargetControlID="ibnDelete">
+                                    </cc1:ConfirmButtonExtender>
+                                    <asp:ImageButton ID="ibnSelectEdit" runat="server" CausesValidation="False" 
+                                        CommandName="Select" ImageUrl="~/Image/APY.gif" Text="選取" 
+                                        CommandArgument="<%# CType(Container,GridViewRow).RowIndex %>" />
+                                    &nbsp;
+                                </ItemTemplate>
+                                <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                            </asp:TemplateField>
+                            <asp:CommandField ShowEditButton="True" Visible="False" />
+                        </Columns>
+                        <EditRowStyle BackColor="#2461BF" />
+                        <FooterStyle HorizontalAlign="Center" VerticalAlign="Middle" 
+                            BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                        <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                        <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                        <RowStyle BackColor="#EFF3FB" />
+                        <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                    </asp:GridView>        
+                    <div align="left">
+                        <asp:ImageButton ID="ibnManagerAdd" runat="server" ImageUrl="~/Image/add.gif" />
+                    </div>
+                    <asp:SqlDataSource ID="SqlDataSourceManager" runat="server" 
+                        ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
+                        SelectCommand="SELECT * FROM [P_10] ORDER BY RANKID" ConflictDetection="CompareAllValues" 
+                        DeleteCommand="DELETE FROM [P_10] WHERE [P_Num] = @original_P_Num "                         
+                        OldValuesParameterFormatString="original_{0}"                                                                        
+                        
+                        
+                        UpdateCommand="UPDATE [P_10] SET [Name] = @Name, [RankId] = @RankId, [Status] = @Status, [ModifyDate] = @ModifyDate, [Modifier] = @Modifier WHERE [P_Num] = @original_P_Num">
+                        <DeleteParameters>
+                            <asp:Parameter Name="original_P_Num" Type="Decimal" />
+                        </DeleteParameters>                        
+                        <UpdateParameters>
+                            <asp:Parameter Name="Name" Type="String" />
+                            <asp:Parameter Name="RankId" Type="Int32" />
+                            <asp:Parameter Name="Status" Type="Byte" />
+                            <asp:Parameter Name="ModifyDate" Type="DateTime" />
+                            <asp:Parameter Name="Modifier" Type="String" />
+                            <asp:Parameter Name="original_P_Num" Type="Decimal" />
+                        </UpdateParameters>
+                    </asp:SqlDataSource>
+                </td>
+            </tr>
+        </table>
+        <asp:Button ID="Button1" runat="server" Text="開啟燈號清單" 
+            OnClientClick="openwin();" />
+    </form>
+</body>
+</html>

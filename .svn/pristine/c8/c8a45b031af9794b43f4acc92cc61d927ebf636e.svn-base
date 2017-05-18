@@ -1,0 +1,43 @@
+﻿Imports System.Data.SqlClient
+
+Partial Class M_Source_10_MOA10002
+    Inherits Page
+
+    ReadOnly sql_function As New C_SQLFUN
+    ReadOnly connstr As String = sql_function.G_conn_string
+    Dim db As New SqlConnection(connstr)
+
+#Region "Custom Function"
+    ''**********************  以下為Custom Function  **************************
+#End Region
+
+#Region "Form Function"
+    ''**********************  以下為Form Function  ****************************
+    Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Page.Header.DataBind()
+    End Sub
+
+    Protected Sub gvManagerEmployee_RowDataBound(sender As Object, e As GridViewRowEventArgs) Handles gvManagerEmployee.RowDataBound
+        Select Case e.Row.RowType
+            Case DataControlRowType.DataRow
+                Dim lblManager As Label = CType(e.Row.FindControl("lblManager"), Label)
+                Dim lblEmployee As Label = CType(e.Row.FindControl("lblEmployee"), Label)
+                Dim strSql As String
+                Dim dr As SqlDataReader
+                If lblManager Is Nothing Or lblEmployee Is Nothing Then Return
+                db.Open()
+                strSql = "SELECT EMP_CHINESE_NAME FROM EMPLOYEE WHERE EMPUID='" & lblEmployee.Text & "'"
+                dr = New SqlCommand(strSql, db).ExecuteReader
+                If (dr.Read) Then lblEmployee.Text = dr("EMP_CHINESE_NAME").ToString()
+                db.Close()
+
+                db.Open()
+                strSql = "SELECT NAME FROM P_10 A,P_1001 B WHERE A.P_NUM='" & lblManager.Text & "' AND A.P_NUM=B.MANAGER_ID GROUP BY A.NAME"
+                dr = New SqlCommand(strSql, db).ExecuteReader
+                If (dr.Read) Then lblManager.Text = dr("NAME").ToString()
+                db.Close()
+        End Select
+    End Sub
+#End Region
+
+End Class

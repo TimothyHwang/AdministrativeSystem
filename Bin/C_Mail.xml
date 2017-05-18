@@ -1,0 +1,59 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+C_Mail
+</name>
+</assembly>
+<members>
+<member name="F:C_Mail.C_Mail.host">
+	<summary>
+ 指定 SMTP Server; 
+ </summary>
+</member><member name="F:C_Mail.C_Mail.hostPort">
+	<summary>
+ 指定 SMTP Server Port; 預設值為 25
+ </summary>
+</member><member name="P:C_Mail.C_Mail.sendFrom">
+	<summary>
+ 指定寄件人的位址; 
+ </summary>
+</member><member name="P:C_Mail.C_Mail.sendFromWhom">
+	<summary>
+ 指定寄件人的位址
+ </summary>
+</member><member name="F:C_Mail.C_Mail.to">
+	<summary>
+ 指定收件人地址; 由於可以同時指定多人, 所以使用 String() 型別
+ </summary>
+</member><member name="F:C_Mail.C_Mail.bcc">
+	<summary>
+ 指定 BCC 地址; 由於可以同時指定多人, 所以使用 String() 型別; 預設值為 service@YourDomain.com
+ </summary>
+</member><member name="F:C_Mail.C_Mail.subject">
+	<summary>
+ 指定該郵件的標題
+ </summary>
+</member><member name="F:C_Mail.C_Mail.subjectEncoding">
+	<summary>
+ 指定郵件標題的編碼方式, 預設值為 UTF8
+ </summary>
+</member><member name="P:C_Mail.C_Mail.body">
+	<summary>
+ 指定該郵件的內容
+ </summary>
+</member><member name="F:C_Mail.C_Mail.bodyEncoding">
+	<summary>
+ 指定郵件內容的編碼方式, 預設值為 UTF8
+ </summary>
+</member><member name="F:C_Mail.C_Mail.isBodyHtml">
+	<summary>
+ 指定該郵件是否為 HTML 格式或純文字格式; 預設值為 False (純文字格式)
+ </summary>
+</member><member name="F:C_Mail.C_Mail.styleBody">
+	<summary>指定整體信件的樣式; 預設值是 "font-family:Verdana,Arial;"</summary>
+</member><member name="F:C_Mail.C_Mail.style1">
+	<summary>指定樣式1</summary>
+</member>
+</members>
+</doc>

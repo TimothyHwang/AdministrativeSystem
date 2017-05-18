@@ -1,0 +1,26 @@
+﻿--20120517 更新 申請機密文件的建立者
+ALTER TABLE [dbo].[P_0804]
+	ADD [PAIDNO] varchar(10) NULL
+GO
+
+--20120601 更新 申請機密文件
+
+ALTER TABLE [dbo].[P_0804] --複印時間
+	ADD [Printer_Datetime] smalldatetime NULL
+GO
+
+ALTER TABLE [dbo].[P_0804] --原件張數
+	ADD [Ori_sheet] int NULL
+GO
+
+ALTER TABLE [dbo].[P_0804] --每份複印張數
+	ADD [Copy_sheet] int NULL
+GO
+
+ALTER TABLE [dbo].[P_0804] --合計複印張數
+	ADD [Total_sheet] int NULL
+GO
+
+ALTER TABLE [dbo].[P_0804] --複(影)印張數流水號
+	ADD [Sheet_ID] varchar(30) NULL
+GO

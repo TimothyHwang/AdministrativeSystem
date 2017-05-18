@@ -1,0 +1,130 @@
+﻿body {
+}
+.form
+{
+	font: 13px Verdana, Arial, Helvetica, sans-serif;
+	color: #666666;
+	text-decoration: none;
+}
+
+.toptitle{
+	font:bold 15px "Verdana, Arial, Helvetica, sans-serif";
+	background-color:#6499CD;
+	border:1px solid #6499CD;
+	text-align: center;
+	color: #FFFFFF;
+	padding-top:2px;
+}
+.tableA{
+	border:1px solid #6499CD;
+	padding:20px;
+}
+
+.tableB{
+	border:1px solid #6499CD;
+	padding:0px 20px 10px 20px;
+}
+.title{
+	margin-left:-8px;
+	font-size: 13px;
+	color: #990000;
+}
+
+.button2
+{
+    BORDER-RIGHT: #333333 1px solid;
+    BORDER-TOP: #ffffff 1px solid;
+    FONT-SIZE: 12px;
+    WIDTH: 20px;
+    CURSOR: hand;
+    PADDING-TOP: 1px;
+    BORDER-BOTTOM: #666666 1px solid;
+    FONT-FAMILY: "新細明體", "Arial";
+    HEIGHT: 22px;
+    BACKGROUND-COLOR: #d3ddec;
+    TEXT-ALIGN: center;
+}
+.button3
+{
+    BORDER-RIGHT: #333333 1px solid;
+    BORDER-TOP: #ffffff 1px solid;
+    FONT-SIZE: 12px;
+    WIDTH: 20px;
+    CURSOR: hand;
+    PADDING-TOP: 1px;
+    BORDER-BOTTOM: #666666 1px solid;
+    FONT-FAMILY: "新細明體", "Arial";
+    HEIGHT: 22px;
+    BACKGROUND-COLOR: red;
+    TEXT-ALIGN: center;
+}
+
+.menuBar {
+	CURSOR: hand;
+	COLOR: #ffffff;
+	BORDER: #ffffff 1px solid; 
+	FONT-SIZE: 12px; 
+	BACKGROUND-COLOR: #547fb2;
+	WIDTH: 165px
+}
+.menuBody {
+	COLOR: #003366;
+	BORDER: #3366CC 0px ridge; 
+	FONT-SIZE: 12px; 
+	BACKGROUND-COLOR: #F0F4F8;
+	WIDTH: 165px;
+	Height: 100px
+}
+.menuLeftNavOff
+{
+	
+	FONT-SIZE: 16px; 
+	
+}
+.menuLeftNavUp
+{
+	FONT-SIZE: 16px; 
+	CURSOR: hand;
+	COLOR: #ffffff;
+	BACKGROUND-COLOR: #003366;
+}
+
+.CellClass
+{
+	COLOR: #000066;
+	BACKGROUND-COLOR: #e2ebfe;
+}
+
+.row_1
+{
+    BACKGROUND-COLOR: #ffffff;
+    BORDER-BOTTOM: #6e6e6e 1px solid;
+    BORDER-LEFT: #6e6e6e 1px solid;
+    BORDER-RIGHT: #6e6e6e 1px solid;
+    BORDER-TOP: #6e6e6e 1px solid
+}
+.row_2
+{
+    BACKGROUND-COLOR: #e6f4ff;
+    BORDER-BOTTOM: #6e6e6e 1px solid;
+    BORDER-LEFT: #6e6e6e 1px solid;
+    BORDER-RIGHT: #6e6e6e 1px solid;
+    BORDER-TOP: #6e6e6e 1px solid
+}
+.row_3
+{
+    BACKGROUND-COLOR: #dddddd;
+    BORDER-BOTTOM: #6e6e6e 1px solid;
+    BORDER-LEFT: #6e6e6e 1px solid;
+    BORDER-RIGHT: #6e6e6e 1px solid;
+    BORDER-TOP: #6e6e6e 1px solid
+}
+
+.RowClass
+{
+    BACKGROUND-COLOR: #dddddd;
+    COLOR: black;
+    FONT-FAMILY: "Verdana", "Tahoma", "標楷體", "Times New Roman";
+    FONT-SIZE: 16px;
+}
+

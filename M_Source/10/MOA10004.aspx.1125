@@ -1,0 +1,54 @@
+﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="MOA10004.aspx.vb" Inherits="M_Source_10_MOA10002" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>主官在營清單</title>
+    <link href='<%#ResolveUrl("~/css/site.css") %>' rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+    
+        <asp:GridView ID="gvManagerEmployee" runat="server" AllowPaging="True" 
+            AllowSorting="True" EmptyDataText="查無任何資料"
+            AutoGenerateColumns="False" DataSourceID="SqlDataSourceP_1001" 
+            Width="100%" DataKeyNames="P_Num" CellPadding="4" ForeColor="#333333" 
+            GridLines="None" EnableModelValidation="True" Caption="主官在營清單" 
+            CaptionAlign="Top" CssClass="tableView">
+            <Columns>
+                <asp:BoundField DataField="P_Num" SortExpression="P_Num" HeaderText="P_Num" 
+                    InsertVisible="False" ReadOnly="True" Visible="False" >
+                </asp:BoundField>
+                <asp:TemplateField HeaderText="主官名稱" SortExpression="Manager_Id">
+                    <ItemTemplate>
+                        <asp:Label ID="lblManager" runat="server" Text='<%# Bind("Manager_Id") %>'></asp:Label>
+                    </ItemTemplate>
+                    <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="負責人名稱" SortExpression="Employee_Id">
+                    <ItemTemplate>
+                        <asp:Label ID="lblEmployee" runat="server" Text='<%# Bind("Employee_Id") %>'></asp:Label>
+                    </ItemTemplate>
+                    <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                </asp:TemplateField>
+            </Columns>
+            <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+            <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+            <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+            <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+            <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+            <EditRowStyle BackColor="#999999" />
+            <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+                <EmptyDataRowStyle ForeColor="DarkBlue" HorizontalAlign="Center" />
+        </asp:GridView>
+        <asp:SqlDataSource ID="SqlDataSourceP_1001" runat="server" 
+            ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
+            SelectCommand="SELECT * FROM [P_1001] ORDER BY [Manager_Id], [Employee_Id]">
+        </asp:SqlDataSource>
+    
+    </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,14 @@
+[2013/09/17 09:13:40]Message : 會客洽公申請單
+[2013/09/17 09:13:40]Message : 異動T-Sql：U28r13D6EA,tempu178,6ITKO4HJVO2368N8,1,TEMPU179
+[2013/09/17 09:15:54]Message : 門禁會議管制申請單
+[2013/09/17 09:15:54]Message : 異動T-Sql：INSERT INTO flowctl(eformid,eformrole,eformsn,steps,empuid,emp_chinese_name,group_name,hddate,gonogo,nextstep,stepsid,important,recdate,appdate,deptcode,createdate) VALUES ('S9QR2W8X6U','1','H4539L8TPQ3QCJ6X','0','TEMPU178',N'OA測試人員178','申請人',GETDATE(),'-','9257','1','1',GETDATE(),GETDATE(),'528',GETDATE())
+[2013/09/17 09:15:54]Message : 門禁會議管制申請單
+[2013/09/17 09:15:54]Message : 異動T-Sql：INSERT INTO flowctl(eformid,eformrole,eformsn,steps,empuid,emp_chinese_name,group_name,gonogo,nextstep,stepsid,important,recdate,appdate,deptcode,createdate) VALUES ('S9QR2W8X6U','1','H4539L8TPQ3QCJ6X','9257','TEMPU179',N'OA測試人員179','門禁會議管制群組','?', '-1','9257','1',GETDATE(),GETDATE(),'616',GETDATE())
+[2013/09/17 09:19:07]Message : 門禁會議管制申請單
+[2013/09/17 09:19:07]Message : 異動T-Sql：INSERT INTO flowctl(eformid,eformrole,eformsn,steps,empuid,emp_chinese_name,group_name,hddate,gonogo,nextstep,stepsid,important,recdate,appdate,deptcode,createdate) VALUES ('S9QR2W8X6U','1','8R6VNUKU9IT8W8HC','0','TEMPU178',N'OA測試人員178','申請人',GETDATE(),'-','9257','1','1',GETDATE(),GETDATE(),'528',GETDATE())
+[2013/09/17 09:19:07]Message : 門禁會議管制申請單
+[2013/09/17 09:19:07]Message : 異動T-Sql：INSERT INTO flowctl(eformid,eformrole,eformsn,steps,empuid,emp_chinese_name,group_name,gonogo,nextstep,stepsid,important,recdate,appdate,deptcode,createdate) VALUES ('S9QR2W8X6U','1','8R6VNUKU9IT8W8HC','9257','TEMPU179',N'OA測試人員179','門禁會議管制群組','?', '-1','9257','1',GETDATE(),GETDATE(),'616',GETDATE())
+[2013/09/17 09:34:53]Message : 門禁會議管制申請單
+[2013/09/17 09:34:53]Message : 異動T-Sql：INSERT INTO flowctl(eformid,eformrole,eformsn,steps,empuid,emp_chinese_name,group_name,hddate,gonogo,nextstep,stepsid,important,recdate,appdate,deptcode,createdate) VALUES ('S9QR2W8X6U','1','N47J4432278D3KN8','0','TEMPU178',N'OA測試人員178','申請人',GETDATE(),'-','9257','1','1',GETDATE(),GETDATE(),'528',GETDATE())
+[2013/09/17 09:35:14]Message : 門禁會議管制申請單
+[2013/09/17 09:35:14]Message : 異動T-Sql：INSERT INTO flowctl(eformid,eformrole,eformsn,steps,empuid,emp_chinese_name,group_name,gonogo,nextstep,stepsid,important,recdate,appdate,deptcode,createdate) VALUES ('S9QR2W8X6U','1','N47J4432278D3KN8','9257','TEMPU179',N'OA測試人員179','門禁會議管制群組','?', '-1','9257','1',GETDATE(),GETDATE(),'616',GETDATE())

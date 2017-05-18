@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DS01010" targetNamespace="http://tempuri.org/DS01010.xsd" xmlns:mstns="http://tempuri.org/DS01010.xsd" xmlns="http://tempuri.org/DS01010.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DS01010" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DS01010" msprop:Generator_DataSetName="DS01010">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="SignRecords" msprop:Generator_UserTableName="SignRecords" msprop:Generator_RowDeletedName="SignRecordsRowDeleted" msprop:Generator_RowChangedName="SignRecordsRowChanged" msprop:Generator_RowClassName="SignRecordsRow" msprop:Generator_RowChangingName="SignRecordsRowChanging" msprop:Generator_RowEvArgName="SignRecordsRowChangeEvent" msprop:Generator_RowEvHandlerName="SignRecordsRowChangeEventHandler" msprop:Generator_TableClassName="SignRecordsDataTable" msprop:Generator_TableVarName="tableSignRecords" msprop:Generator_RowDeletingName="SignRecordsRowDeleting" msprop:Generator_TablePropName="SignRecords">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EMP_CHINESE_NAME" msprop:Generator_UserColumnName="EMP_CHINESE_NAME" msprop:Generator_ColumnPropNameInRow="EMP_CHINESE_NAME" msprop:Generator_ColumnVarNameInTable="columnEMP_CHINESE_NAME" msprop:Generator_ColumnPropNameInTable="EMP_CHINESE_NAMEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="SIGNDATE_d" msprop:Generator_UserColumnName="SIGNDATE_d" msprop:Generator_ColumnPropNameInRow="SIGNDATE_d" msprop:Generator_ColumnVarNameInTable="columnSIGNDATE_d" msprop:Generator_ColumnPropNameInTable="SIGNDATE_dColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="In_Time_nvc" msprop:Generator_UserColumnName="In_Time_nvc" msprop:Generator_ColumnPropNameInRow="In_Time_nvc" msprop:Generator_ColumnVarNameInTable="columnIn_Time_nvc" msprop:Generator_ColumnPropNameInTable="In_Time_nvcColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Out_Time_nvc" msprop:Generator_UserColumnName="Out_Time_nvc" msprop:Generator_ColumnPropNameInRow="Out_Time_nvc" msprop:Generator_ColumnVarNameInTable="columnOut_Time_nvc" msprop:Generator_ColumnPropNameInTable="Out_Time_nvcColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Out_REASON" msprop:Generator_UserColumnName="Out_REASON" msprop:Generator_ColumnPropNameInRow="Out_REASON" msprop:Generator_ColumnVarNameInTable="columnOut_REASON" msprop:Generator_ColumnPropNameInTable="Out_REASONColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="NoonHour" msprop:Generator_UserColumnName="NoonHour" msprop:Generator_ColumnVarNameInTable="columnNoonHour" msprop:Generator_ColumnPropNameInRow="NoonHour" msprop:Generator_ColumnPropNameInTable="NoonHourColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Hours" msprop:Generator_UserColumnName="Hours" msprop:Generator_ColumnVarNameInTable="columnHours" msprop:Generator_ColumnPropNameInRow="Hours" msprop:Generator_ColumnPropNameInTable="HoursColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="SubTotal" msprop:Generator_UserColumnName="SubTotal" msprop:Generator_ColumnPropNameInRow="SubTotal" msprop:Generator_ColumnVarNameInTable="columnSubTotal" msprop:Generator_ColumnPropNameInTable="SubTotalColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
