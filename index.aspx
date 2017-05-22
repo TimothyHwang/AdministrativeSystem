@@ -9,7 +9,7 @@
 </head>
 <body style="background-image:url('image/background.jpg'); background-repeat:no-repeat; background-color: #3366CC;" >
     <form id="form1" runat="server">
-    <div>
+        <div>
 			<table border="0" style="Z-INDEX: 101; LEFT: 592px; WIDTH: 218px; POSITION: absolute; TOP: 176px; HEIGHT: 96px">
 				<tr>
 					<td><asp:label id="Label1" runat="server" CssClass="form" >帳號：</asp:label></td>
@@ -28,7 +28,7 @@
                     </td>
 				</tr>
 			</table>
-      </div>
+         </div>
     </form>
 </body>
 </html>

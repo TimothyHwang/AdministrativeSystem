@@ -362,12 +362,12 @@ Partial Class Source_00_MOA00010
                                         ''更新門禁欄位已匯出時間
                                         Using connA As New SqlConnection(ConfigurationManager.ConnectionStrings("ConnectionString").ConnectionString)
                                             connA.Open()
-                                            Dim tran As SqlTransaction
-                                            tran = connA.BeginTransaction
-                                            Dim cmd As New SqlCommand("UPDATE P_05 SET nCheckDT=GetDate() WHERE EFORMSN='" & eformsn & "'", connA, tran)
+                                            Dim trans As SqlTransaction
+                                            trans = connA.BeginTransaction
+                                            Dim cmd As New SqlCommand("UPDATE P_05 SET nCheckDT=GetDate() WHERE EFORMSN='" & eformsn & "'", connA, trans)
                                             cmd.ExecuteNonQuery()
-                                            tran.Commit()
-                                            tran.Dispose()
+                                            trans.Commit()
+                                            trans.Dispose()
                                         End Using
                                     End If
                                 Catch sqlex As SqlException

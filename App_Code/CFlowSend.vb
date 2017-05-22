@@ -1756,30 +1756,40 @@ Public Class CFlowSend
                         ''核准後需更新外部資料庫 
                         Select Case EformTable
                             Case "P_05"
-                                ''insert外部資料庫
-                                Using connA As New SqlConnection(ConfigurationManager.ConnectionStrings("ConnectionString2").ConnectionString)
-                                    connA.Open()
-                                    Dim trans As SqlTransaction
-                                    trans = connA.BeginTransaction
-                                    ''會客洽公申請單
-                                    Dim P_05AData As New P_05A(eformsn)
-                                    P_05AData.Insert(trans, connA)
-                                    ''會客人員明細資料表
-                                    'Dim P_0501AData As New P_0501A(eformsn)
-                                    'P_0501AData.Insert(trans, connA)
-                                    trans.Commit()
-                                    trans.Dispose()
-                                End Using
-                                ''更新門禁欄位已匯出時間
-                                Using connA As New SqlConnection(ConfigurationManager.ConnectionStrings("ConnectionString").ConnectionString)
-                                    connA.Open()
-                                    Dim tran As SqlTransaction
-                                    tran = connA.BeginTransaction
-                                    Dim cmd As New SqlCommand("UPDATE " & EformTable & " SET nCheckDT=GetDate() WHERE EFORMSN='" & eformsn & "'", connA, tran)
-                                    Dim iSuccess As Integer = cmd.ExecuteNonQuery
-                                    tran.Commit()
-                                    tran.Dispose()
-                                End Using
+                                Try
+                                    ''insert外部資料庫
+                                    Using connA As New SqlConnection(ConfigurationManager.ConnectionStrings("ConnectionString2").ConnectionString)
+                                        connA.Open()
+                                        Dim trans As SqlTransaction
+                                        trans = connA.BeginTransaction
+                                        ''會客洽公申請單
+                                        Dim P_05AData As New P_05A(eformsn)
+                                        P_05AData.Insert(trans, connA)
+                                        ''會客人員明細資料表
+                                        'Dim P_0501AData As New P_0501A(eformsn)
+                                        'P_0501AData.Insert(trans, connA)
+                                        trans.Commit()
+                                        trans.Dispose()
+                                    End Using
+                                    ''更新門禁欄位已匯出時間
+                                    Using connA As New SqlConnection(ConfigurationManager.ConnectionStrings("ConnectionString").ConnectionString)
+                                        connA.Open()
+                                        Dim tran As SqlTransaction
+                                        tran = connA.BeginTransaction
+                                        Dim cmd As New SqlCommand("UPDATE " & EformTable & " SET nCheckDT=GetDate() WHERE EFORMSN='" & eformsn & "'", connA, tran)
+                                        Dim iSuccess As Integer = cmd.ExecuteNonQuery
+                                        tran.Commit()
+                                        tran.Dispose()
+                                    End Using
+                                Catch sqlex As SqlException
+                                    If (Not "-1".Equals(sqlex.Message.IndexOf("無法開啟至 SQL Server 的連接", StringComparison.Ordinal).ToString) Or Not "-1".Equals(sqlex.Message.IndexOf("登入失敗").ToString)) Then
+                                        MessageBox.Show("批核完成\n門禁會議管制申請寫入門禁系統連線錯誤，請連繫系統管理員")
+                                    Else
+                                        MessageBox.Show("批核完成\n門禁會議管制申請單寫入門禁系統錯誤\n" & sqlex.Message)
+                                    End If
+                                Catch ex As Exception
+                                    MessageBox.Show(ex.Message)
+                                End Try
                             Case "P_09"
                                 Try
                                     ''insert外部資料庫
